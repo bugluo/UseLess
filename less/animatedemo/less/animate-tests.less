@@ -1,0 +1,123 @@
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../../animate/components/bootstrap/less/mixins.less";
+@import "../../animate/less/mixins.less";
+
+html {
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+a, input, button {
+    -ms-touch-action: none !important;
+}
+
+.animate-canvas {
+	margin-top: 20px;
+}
+
+.content {
+	background: transparent;
+	margin-top: 0px;
+	height: 150px;
+}
+
+.hero-unit {
+	text-align: center;
+	margin-bottom: 0px;
+	text-shadow: none;
+	.border-radius(0px);
+	h1 {
+		font-weight: 100;
+		//text-transform: uppercase;
+	//background-image: -webkit-linear-gradient(92deg,#fb83fa,#00aced);
+	//-webkit-background-clip: text;
+	//-webkit-text-fill-color: transparent;
+	}
+}
+
+.btn {
+	color: @gray;
+	border: 1px solid @grayNine;
+	.border-radius(6px);
+	text-shadow: none;
+}
+
+.btn-primary {
+	background-image: none;
+	background-color: @btnPrimaryBackground;
+	>.a{
+
+	}
+	&:hover, &:focus, &:active {
+		background-color: @themeBlue;
+		border: 1px solid darken(@themeBlue, 10%);
+		.box-shadow(0 0 0 0 rgba(0,0,0,0));
+	}
+}
+.btn-primary .a{
+
+}
+
+.sandbox {
+	padding: 60px 0 20px 0;
+	position: relative;
+	z-index: 1030;
+	pointer-events: none;
+	max-width: 200px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 0px;
+	background: transparent;
+}
+
+h3 {
+	font-size: @baseFontSize + 4;
+}
+
+.fixed {
+	position: fixed !important;
+	top: 0px;
+	left: 50%;
+  	margin-left: -100px;
+	display: inline-block;
+	text-align: center;
+	+ h3 {
+		margin-top: @baseFontSize + 40;
+	}
+}
+
+#animateTest {
+	display: block;
+	padding: 20px 0px;
+	//width: 100%;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background: #333;
+	.border-radius(5px);
+	.box-shadow(0 0 30px 0 rgba(0,0,0,.6));
+	.backface-visibility(hidden);
+	.animation-duration(1s);
+	.animation-delay(.2s);
+	.animation-timing-function(ease);
+	.animation-fill-mode(both);
+}
+
+#animateTest.dropDown,
+#animateTest.dropUp {
+	.animation-duration(.3s);
+}
+
+#animateTest.scaleIn,
+#animateTest.scaleInBig,
+#animateTest.scaleOut,
+#animateTest.scaleOutBig {
+	.animation-duration(.75s);
+}
+
+#animateTest span {
+	margin: 0;
+}
+
+.fixed #animateTest {
+	width: 200px;
+}
